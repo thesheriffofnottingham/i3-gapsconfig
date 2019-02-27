@@ -30,7 +30,7 @@ font pango:Monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -155,28 +155,40 @@ set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 set $black-color         #000000
+set $white-color         #ffffff
+set $purple-color        #67429b
+set $bar-purple          #6b19b7
+set $green-color         #30e527
+set $gray-color          #939393
+set $dark-gray           #606060
+set $cyan-color          #27e5df
+set $inactive-cyan       #248783
+
+
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $iancative-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+client.focused          $white-color        $black-color       $text-color          $black-color
+client.unfocused        $purple-color       $black-color       $inactive-text-color $white-color
+client.focused_inactive $inactive-bg-color  $black-color       $inactive-text-color $white-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
+
+# hide the indicator
 hide_edge_borders both
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        # position top
+         position top
 	 status_command i3status
           colors {
-		background #000000
-	        separator #757575
+		background $black-color
+	        separator  $dark-gray
 		#                  border             background         text
 		focused_workspace  $black-color       $black-color       $text-color
 		inactive_workspace $black-color       $black-color       $inactive-text-color
-                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+                urgent_workspace   $urgent-bg-color   $urgent-bg-color   $black-color
         }
 }
 
@@ -193,7 +205,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 bindsym $mod+Shift+x exec i3lock --color "$black-color"
 
 # wallpaper
-exec_always feh --bg-fill /home/gaston/Desktop/images/wallpaper/1544795700906.png
+exec_always feh --bg-fill /home/gaston/Desktop/images/wallpaper/1464011373187.jpg
 
 # display-compositor
 #exec_always compton 
@@ -211,10 +223,10 @@ bindsym XF86LaunchA exec xfce4-terminal -e htop
 #bindsym $mod+End exec xfce4-terminal -e sudo poweroff
 
 # i3-gaps configs
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
-gaps inner 5
-gaps outer 5
+gaps inner 0
+gaps outer 0
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
@@ -224,4 +236,4 @@ gaps outer 5
 #
 # Please remove the following exec line:
 #######################################################################
-exec i3-config-wizard
+#exec i3-config-wizard
