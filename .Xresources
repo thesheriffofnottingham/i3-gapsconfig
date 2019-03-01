@@ -1,2 +1,15 @@
-URxvt.font: xft:monospace:size=10
+URxvt.font: xft:monospace:size=9
 URxvt.scrollBar: false
+URxvt.url-launcher: firefox
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt*secondaryScreen: 1
+URxvt*secondaryScroll: 0
+URxvt*fading: 30
+
+urxvt*foreground: white
+urxvt*background: black
+urxvt*transparent: true
+urxvt*shading: 20
+
