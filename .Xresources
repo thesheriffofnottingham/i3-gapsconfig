@@ -10,6 +10,6 @@ URxvt*fading: 30
 
 urxvt*foreground: white
 urxvt*background: black
-urxvt*transparent: true
+urxvt*transparent: false
 urxvt*shading: 20
 
