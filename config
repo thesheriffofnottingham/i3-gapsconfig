@@ -170,9 +170,9 @@ set $deepblue            #0c00ff
 
 # window colors
 #                       title bar           background         text                 indicator
-client.focused          $white-color        $green-color       $text-color          $green-color
-client.unfocused        $purple-color       $green-color       $inactive-text-color $green-color
-client.focused_inactive $inactive-bg-color  $green-color       $inactive-text-color $green-color
+client.focused          $white-color        $white-color       $text-color          $white-color
+client.unfocused        $purple-color       $white-color       $inactive-text-color $white-color
+client.focused_inactive $inactive-bg-color  $white-color       $inactive-text-color $white-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
 
@@ -188,8 +188,8 @@ bar {
 		background $black-color
 	        separator  $white-color
 		#                  border             background         text
-		focused_workspace  $white-color       $gray-color        $text-color
-		inactive_workspace $black-color       $gray-color        $black-color
+		focused_workspace  $dark-gray         $dark-gray         $text-color
+		inactive_workspace $black-color       $black-color       $gray-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $black-color
         }
 }
@@ -224,6 +224,14 @@ bindsym XF86LaunchA exec urxvt -e htop
 # power off
 bindsym $mod+End exec urxvt -e sudo poweroff
 
+# start workspace 10
+#bindsym $mod+Shift+i exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/gaston/.i3/workspace-10.json'"
+
+
+
+
+
+######################################################################
 # i3-gaps configs
 for_window [class="^.*"] border pixel 2
 
