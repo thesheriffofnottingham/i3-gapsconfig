@@ -170,9 +170,9 @@ set $deepblue            #0c00ff
 
 # window colors
 #                       title bar           background         text                 indicator
-client.focused          $white-color        $white-color       $text-color          $white-color
-client.unfocused        $purple-color       $white-color       $inactive-text-color $white-color
-client.focused_inactive $inactive-bg-color  $white-color       $inactive-text-color $white-color
+client.focused          $white-color        $black-color       $text-color          $black-color
+client.unfocused        $purple-color       $black-color       $inactive-text-color $black-color
+client.focused_inactive $inactive-bg-color  $black-color       $inactive-text-color $black-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
 
@@ -234,10 +234,10 @@ bindsym $mod+End exec urxvt -e sudo poweroff
 
 ######################################################################
 # i3-gaps configs
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
-gaps inner 10
-gaps outer 10
+gaps inner 1
+gaps outer 1
 #######################################################################
 # automatically start i3-config-wizard to offer the user to create a
 # keysym-based config which used their favorite modifier (alt or windows)
