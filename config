@@ -188,17 +188,18 @@ bar {
 		background $black-color
 	        separator  $white-color
 		#                  border             background         text
-		focused_workspace  $dark-gray         $dark-gray         $text-color
+		focused_workspace  $black-color       $white-color       $black-color
 		inactive_workspace $black-color       $black-color       $gray-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $black-color
         }
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec amixer set Master -q 5%+ 
+bindsym XF86AudioLowerVolume exec amixer set Master -q 5%-
+bindsym XF86AudioMute exec amixer set Master -q toggle
 
+bindsym $mod+n exec urxvt -e command pwd
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
