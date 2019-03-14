@@ -166,6 +166,7 @@ set $inactive-cyan       #248783
 set $border-green        #00ff50
 set $bordgreen           #00a333
 set $deepblue            #0c00ff
+set $slackblue            #25486f
 
 
 # window colors
@@ -185,11 +186,11 @@ bar {
          position top
 	 status_command i3status
           colors {
-		background $black-color
+		background $slackblue
 	        separator  $white-color
 		#                  border             background         text
-		focused_workspace  $black-color       $white-color       $black-color
-		inactive_workspace $black-color       $black-color       $gray-color
+		focused_workspace  $slackblue         $slackblue         $black-color
+		inactive_workspace $slackblue         $slackblue         $gray-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $black-color
         }
 }
@@ -208,7 +209,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 bindsym $mod+Shift+x exec i3lock --color "$black-color"
 
 # wallpaper
-exec_always feh --bg-scale /home/gaston/Desktop/images/wallpaper/1544846791612.jpg
+exec_always feh --bg-scale /home/gaston/Desktop/images/wallpaper/slack.png
 
 # display-compositor
 # exec_always compton 
@@ -225,6 +226,9 @@ bindsym XF86LaunchA exec urxvt -e htop
 # power off
 bindsym $mod+End exec urxvt -e sudo poweroff
 
+# open config
+bindsym XF86Tools exec urxvt -e nano .config/i3/config
+
 # start workspace 10
 #bindsym $mod+Shift+i exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/gaston/.i3/workspace-10.json'"
 
@@ -234,7 +238,7 @@ bindsym $mod+End exec urxvt -e sudo poweroff
 
 ######################################################################
 # i3-gaps configs
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 gaps inner 1
 gaps outer 1
