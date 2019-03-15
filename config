@@ -189,7 +189,7 @@ bar {
 		background $slackblue
 	        separator  $white-color
 		#                  border             background         text
-		focused_workspace  $slackblue         $slackblue         $black-color
+		focused_workspace  $slackblue         $slackblue         $white-color
 		inactive_workspace $slackblue         $slackblue         $gray-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $black-color
         }
