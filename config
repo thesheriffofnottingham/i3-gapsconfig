@@ -220,8 +220,11 @@ exec_always xscreensaver
 # screenshot
 bindsym Print exec scrot 'Screenshot--%m-%d-%Y.png' -e 'mv $f /home/gaston/Desktop'
 
+# thunar
+bindsym XF86Explorer exec thunar
+
 # neofetch
-bindsym XF86Explorer exec urxvt -hold -e neofetch
+bindsym $mod+Shift+n exec urxvt -hold -e neofetch
 
 # open ranger
 bindsym XF86Search exec urxvt -e ranger
