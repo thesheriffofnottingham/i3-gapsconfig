@@ -214,8 +214,14 @@ exec_always feh --bg-scale /home/gaston/Desktop/images/wallpaper/slack.png
 # display-compositor
 # exec_always compton 
 
+# screensaver
+exec_always xscreensaver
+
 # screenshot
-bindsym Print exec scrot 'Screenshot_%Y-%m-%d.png' -e 'mv $f /home/gaston/Desktop'
+bindsym Print exec scrot 'Screenshot--%m-%d-%Y.png' -e 'mv $f /home/gaston/Desktop'
+
+# neofetch
+bindsym XF86Explorer exec urxvt -hold -e neofetch
 
 # open ranger
 bindsym XF86Search exec urxvt -e ranger
