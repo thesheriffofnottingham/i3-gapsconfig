@@ -189,8 +189,8 @@ bar {
 		background $black-color
 	        separator  $white-color
 		#                  border             background         text
-		focused_workspace  $white-color       $black-color       $white-color
-		inactive_workspace $black-color       $black-color       $gray-color
+		focused_workspace  $black-color       $white-color       $black-color
+		inactive_workspace $white-color       $black-color       $gray-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $black-color
         }
 }
@@ -209,7 +209,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 bindsym $mod+Shift+x exec i3lock --color "$black-color"
 
 # wallpaper
-exec_always feh --bg-scale /home/gaston/Desktop/images/wallpaper/slackware.jpg
+exec_always feh --bg-scale /home/gaston/Desktop/images/wallpaper/background.png
 
 # display-compositor
 # exec_always compton 
